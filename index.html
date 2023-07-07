@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/style.css" />
+    <title>Music Player</title>
+  </head>
+  <body>
+    <!-- <div class="container">
+      <div class="header">
+        <h1>My Music Player</h1>
+      </div>
+      <div class="playlist">
+        <h2>Playlist Name</h2>
+        <ul>
+          <li>Song 1</li>
+          <li>Song 2</li>
+          <li>Song 3</li>
+          <li>Song 4</li>
+        </ul>
+      </div>
+      <div class="player">
+        <div class="song-info">
+          <h3>Song Name</h3>
+          <p>Artist Name</p>
+        </div>
+        <div class="controls">
+          <button>Play</button>
+          <button>Pause</button>
+          <button>Next</button>
+          <button>Previous</button>
+        </div>
+      </div>
+    </div> -->
+    <div class="container">
+      <div class="sidebar">
+        <div class="sidebar-menu">
+          <a href="#">Home</a>
+        </div>
+        <div class="sidebar-menu">
+          <a href="#">Search</a>
+        </div>
+        <div class="sidebar-menu">
+          <h1>Your Playlist</h1>
+          <div class="songlist">
+            <ul>
+              <li>Playlist A</li>
+              <li>Playlist B</li>
+              <li>Playlist C</li>
+            </ul>
+          </div>
+          <!-- End songlist -->
+        </div>
+        <!-- end your playlist -->
+        <div class="sidebar-menu">
+          <h1>Most Played Song</h1>
+          <div class="songlist">
+            <ul>
+              <li>Song D</li>
+              <li>Song E</li>
+              <li>Song F</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- end sidebar -->
+      <div class="music-player">
+        <div class="music-icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="64"
+            height="64"
+            fill="currentColor"
+            class="bi bi-cassette-fill"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h.191l1.862-3.724A.5.5 0 0 1 4 10h8a.5.5 0 0 1 .447.276L14.31 14h.191a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13ZM4 7a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm8 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2ZM6 6a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2H7a1 1 0 0 1-1-1Z"
+            />
+            <path d="m13.191 14-1.5-3H4.309l-1.5 3h10.382Z" />
+          </svg>
+        </div>
+        <!-- end icon/foto music -->
+        <div class="music-detail">
+          <h3>I Want It Thay Way</h3>
+          <p>Backstreet Boys</p>
+        </div>
+        <div class="music-button">
+          <div class="btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              fill="currentColor"
+              class="bi bi-skip-backward-fill"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M.5 3.5A.5.5 0 0 0 0 4v8a.5.5 0 0 0 1 0V8.753l6.267 3.636c.54.313 1.233-.066 1.233-.697v-2.94l6.267 3.636c.54.314 1.233-.065 1.233-.696V4.308c0-.63-.693-1.01-1.233-.696L8.5 7.248v-2.94c0-.63-.692-1.01-1.233-.696L1 7.248V4a.5.5 0 0 0-.5-.5z"
+              />
+            </svg>
+          </div>
+          <!-- end back -->
+          <div class="btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              fill="currentColor"
+              class="bi bi-play-fill"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"
+              />
+            </svg>
+          </div>
+          <!-- end play -->
+          <div class="btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              fill="currentColor"
+              class="bi bi-skip-forward-fill"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M15.5 3.5a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V8.753l-6.267 3.636c-.54.313-1.233-.066-1.233-.697v-2.94l-6.267 3.636C.693 12.703 0 12.324 0 11.693V4.308c0-.63.693-1.01 1.233-.696L7.5 7.248v-2.94c0-.63.693-1.01 1.233-.696L15 7.248V4a.5.5 0 0 1 .5-.5z"
+              />
+            </svg>
+          </div>
+          <!-- end next -->
+        </div>
+        <!-- end btn 1 -->
+        <div class="music-button">
+          <div class="btn fav">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              fill="currentColor"
+              class="bi bi-heart-fill"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
+              />
+            </svg>
+          </div>
+          <!-- end fav -->
+          <div class="btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              fill="currentColor"
+              class="bi bi-list-check"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3.854 2.146a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708L2 3.293l1.146-1.147a.5.5 0 0 1 .708 0zm0 4a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708L2 7.293l1.146-1.147a.5.5 0 0 1 .708 0zm0 4a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z"
+              />
+            </svg>
+          </div>
+          <!-- end add to playlist -->
+        </div>
+        <!-- end button 2 -->
+      </div>
+      <!-- end music player -->
+      <!-- start all song -->
+      <div class="all-song">
+        <h1>All song</h1>
+        <ul>
+          <li>
+            <div class="song-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16 "
+                height="16  "
+                fill="currentColor"
+                class="bi bi-cassette-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h.191l1.862-3.724A.5.5 0 0 1 4 10h8a.5.5 0 0 1 .447.276L14.31 14h.191a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13ZM4 7a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm8 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2ZM6 6a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2H7a1 1 0 0 1-1-1Z"
+                />
+                <path d="m13.191 14-1.5-3H4.309l-1.5 3h10.382Z" />
+              </svg>
+            </div>
+            <div class="song-detail">
+              <p>Heavy Rotation</p>
+              <p>JKT 48</p>
+              <p>04:00</p>
+            </div>
+          </li>
+          <li>
+            <div class="song-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16 "
+                height="16  "
+                fill="currentColor"
+                class="bi bi-cassette-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h.191l1.862-3.724A.5.5 0 0 1 4 10h8a.5.5 0 0 1 .447.276L14.31 14h.191a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13ZM4 7a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm8 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2ZM6 6a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2H7a1 1 0 0 1-1-1Z"
+                />
+                <path d="m13.191 14-1.5-3H4.309l-1.5 3h10.382Z" />
+              </svg>
+            </div>
+            <div class="song-detail">
+              <p>Bury The Light</p>
+              <p>DMC</p>
+              <p>06:15</p>
+            </div>
+          </li>
+          <li>
+            <div class="song-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16 "
+                height="16  "
+                fill="currentColor"
+                class="bi bi-cassette-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h.191l1.862-3.724A.5.5 0 0 1 4 10h8a.5.5 0 0 1 .447.276L14.31 14h.191a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13ZM4 7a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm8 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2ZM6 6a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2H7a1 1 0 0 1-1-1Z"
+                />
+                <path d="m13.191 14-1.5-3H4.309l-1.5 3h10.382Z" />
+              </svg>
+            </div>
+            <div class="song-detail">
+              <p>Hikari</p>
+              <p>Vanguard Sound Studio</p>
+              <p>05:03</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- end container -->
+  </body>
+</html>

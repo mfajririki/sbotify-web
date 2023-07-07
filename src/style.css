@@ -1,0 +1,128 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  background-color: #212322;
+  width: 300px;
+  height: 100%;
+  /* position: fixed; */
+}
+
+.sidebar a {
+  color: #bababa;
+  text-decoration: none;
+  font-size: 25px;
+  /* display: block; */
+}
+
+.sidebar a:hover {
+  color: white;
+}
+
+.sidebar a svg {
+  margin-right: 10px;
+}
+
+.sidebar h1 svg {
+  margin-right: 10px;
+}
+
+.sidebar-menu {
+  padding: 20px;
+}
+
+.sidebar-menu h1 {
+  color: #bababa;
+  font-size: 25px;
+  display: block;
+  font-weight: normal;
+}
+
+.songlist li {
+  list-style: none;
+  color: #bababa;
+}
+
+.songlist li:hover {
+  color: white;
+}
+
+.music-player {
+  background-color: #131413;
+  color: white;
+  width: 80%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 100px;
+}
+
+.music-icon {
+  height: 200px;
+  width: 200px;
+  margin: 0 auto;
+  background-color: gray;
+  line-height: 200px;
+  border-radius: 30px;
+}
+
+.music-button {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.btn {
+  color: #bababa;
+  padding: 0 5px;
+}
+
+.btn:hover {
+  color: white;
+}
+
+.fav {
+  color: crimson;
+}
+
+.all-song {
+  background-color: #212322;
+  width: 300px;
+  height: 100%;
+}
+
+.all-song h1 {
+  color: white;
+  padding-left: 20px;
+}
+
+.all-song li {
+  color: white;
+  list-style: none;
+  display: flex;
+  margin: 5px 0;
+}
+
+.all-song li:hover {
+  color: rgb(62, 62, 62);
+  background-color: lightcyan;
+  list-style: none;
+  display: flex;
+  border-radius: 5px;
+}
+
+.song-icon {
+  margin: auto 10px auto 0;
+}
+
+.all-song li p {
+  font-size: 12px;
+  margin: 0px;
+}
