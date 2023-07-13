@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="src/style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
     <title>Music Player</title>
   </head>
   <body>
@@ -154,7 +154,11 @@
       <!-- start all song -->
       <div class="all-song">
         <h1>All song</h1>
+        <span
+          ><a href="/songlist/new"><h1>+</h1></a></span
+        >
         <ul>
+          <% songList.forEach(song => { %>
           <li>
             <div class="song-icon">
               <svg
@@ -172,55 +176,11 @@
               </svg>
             </div>
             <div class="song-detail">
-              <p>Heavy Rotation</p>
-              <p>JKT 48</p>
-              <p>04:00</p>
+              <p><%= song.title %></p>
+              <p><%= song.artist %></p>
             </div>
           </li>
-          <li>
-            <div class="song-icon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16 "
-                height="16  "
-                fill="currentColor"
-                class="bi bi-cassette-fill"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h.191l1.862-3.724A.5.5 0 0 1 4 10h8a.5.5 0 0 1 .447.276L14.31 14h.191a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13ZM4 7a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm8 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2ZM6 6a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2H7a1 1 0 0 1-1-1Z"
-                />
-                <path d="m13.191 14-1.5-3H4.309l-1.5 3h10.382Z" />
-              </svg>
-            </div>
-            <div class="song-detail">
-              <p>Bury The Light</p>
-              <p>DMC</p>
-              <p>06:15</p>
-            </div>
-          </li>
-          <li>
-            <div class="song-icon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16 "
-                height="16  "
-                fill="currentColor"
-                class="bi bi-cassette-fill"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h.191l1.862-3.724A.5.5 0 0 1 4 10h8a.5.5 0 0 1 .447.276L14.31 14h.191a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13ZM4 7a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm8 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2ZM6 6a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2H7a1 1 0 0 1-1-1Z"
-                />
-                <path d="m13.191 14-1.5-3H4.309l-1.5 3h10.382Z" />
-              </svg>
-            </div>
-            <div class="song-detail">
-              <p>Hikari</p>
-              <p>Vanguard Sound Studio</p>
-              <p>05:03</p>
-            </div>
-          </li>
+          <% }) %>
         </ul>
       </div>
     </div>

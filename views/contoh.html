@@ -1,0 +1,136 @@
+-----index.html------
+
+<html>
+  <head>
+    <title>Express</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+
+  <body>
+    <button onclick="getAbout()">About</button>
+    <section>
+      <div style="display: flex; flex-direction: row; align-items: center">
+        <h1>Users</h1>
+        <input id="search" />
+        <button onclick="searchBtnHandler()">Search</button>
+        <button onclick="createBtnHandler()">Create</button>
+      </div>
+      <ul id="users"></ul>
+    </section>
+    <section>
+      <h1>User Detail</h1>
+      <div id="user-detail">
+        <input id="name" />
+        <input id="age" />
+        <button disabled id="save-btn">Save</button>
+      </div>
+    </section>
+    <script>
+      const baseUrl = "https://7v378r-8080.csb.app";
+    </script>
+    <script>
+      const getAbout = async () => {
+        const aboutResponse = await fetch(`${baseUrl}/about`);
+        const aboutMessage = await aboutResponse.text();
+        alert(aboutMessage);
+      };
+
+      const getUsers = async (name = null) => {
+        document.getElementById("users").innerHTML = "Loading...";
+        let url = `${baseUrl}/users`;
+        if (name) {
+          url += `?name=${name}&age=21`;
+        }
+        const usersResponse = await fetch(url);
+        const users = await usersResponse.json();
+        const usersElements = users.map((user) => {
+          return `
+          <li>${user.name} <button onclick="getUserDetail(${user.id})">Detail</button><button onclick="deleteUser(${user.id})">Delete</button></li>
+        `;
+        });
+        document.getElementById("users").innerHTML = usersElements.join("");
+      };
+
+      const deleteUser = async (id) => {
+        const userDeleteResponse = await fetch(`${baseUrl}/users/${id}`, {
+          method: "DELETE",
+        });
+        const deletedUser = await userDeleteResponse.json();
+        alert(`User ${deletedUser.name} deleted`);
+        getUsers();
+        document.getElementById("user-detail").innerHTML = "";
+      };
+
+      const getUserDetail = async (id) => {
+        const userDetailElement = document.getElementById("user-detail");
+
+        const userDetailResponse = await fetch(`${baseUrl}/users/${id}`);
+        const userDetail = await userDetailResponse.json();
+        document.getElementById("name").value = userDetail.name;
+        document.getElementById("age").value = userDetail.age;
+        document.getElementById("save-btn").remove();
+        document
+          .getElementById("user-detail")
+          .insertAdjacentHTML(
+            "beforeend",
+            `<button id="save-btn" onclick="editUser(${userDetail.id})">Save</button>`
+          );
+      };
+
+      const createUser = async () => {
+        const name = document.getElementById("name")?.value;
+        const age = document.getElementById("age")?.value;
+        const userResponse = await fetch(`${baseUrl}/users`, {
+          headers: new Headers({
+            "content-type": "application/json",
+          }),
+          method: "POST",
+          body: JSON.stringify({
+            name,
+            age,
+          }),
+        });
+        const user = await userResponse.json();
+        getUsers();
+      };
+
+      const editUser = async (id) => {
+        const name = document.getElementById("name")?.value;
+        const age = document.getElementById("age")?.value;
+        const userResponse = await fetch(`${baseUrl}/users/${id}`, {
+          headers: new Headers({
+            "content-type": "application/json",
+          }),
+          method: "PUT",
+          body: JSON.stringify({
+            name,
+            age,
+          }),
+        });
+        const user = await userResponse.json();
+        getUserDetail(user.id);
+        getUsers();
+        alert(`Editted user: ${user.name}; age: ${user.age}`);
+      };
+
+      const searchBtnHandler = () => {
+        const searchValue = document.getElementById("search").value;
+        getUsers(searchValue);
+      };
+
+      const createBtnHandler = () => {
+        document.getElementById("name").value = "";
+        document.getElementById("age").value = "";
+        document.getElementById("save-btn").remove();
+        document
+          .getElementById("user-detail")
+          .insertAdjacentHTML(
+            "beforeend",
+            `<button id="save-btn" onclick="createUser()">Create</button>`
+          );
+      };
+
+      getUsers();
+    </script>
+  </body>
+</html>
